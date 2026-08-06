@@ -1,0 +1,28 @@
+enum Role {
+    ADMIN
+    CUSTOMER
+    TECHNICIAN
+}
+
+model User {
+    id String @id @default(uuid())
+    name String
+    email String @unique
+    password String
+
+    role Role
+
+    phone String?
+    address String?
+    profileImage String?
+
+    isApprove Boolean @default(false)
+    isBlocked Boolean @default(false)
+
+    createdAt DateTime @default(now())
+    updateAt DateTime @updatedAt
+
+    services Service[]
+    bookings Booking[]
+    reviews Review[]
+}
