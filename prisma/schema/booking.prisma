@@ -6,7 +6,7 @@ enum BookingStatus {
 }
 
 model Booking {
-    id String @default(uuid()) @unique
+    id String @id @default(uuid())
 
     customerId String
     customer User @relation(fields: [customerId], references: [id])

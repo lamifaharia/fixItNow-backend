@@ -1,5 +1,5 @@
 model Service {
-    id String @default(uuid()) @unique
+    id String @id @default(uuid())
 
     title String
     description String
